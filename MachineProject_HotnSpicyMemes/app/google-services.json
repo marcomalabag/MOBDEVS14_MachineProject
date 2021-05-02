@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "975531517567",
+    "project_id": "machineproject-hotnspicymemes",
+    "storage_bucket": "machineproject-hotnspicymemes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975531517567:android:6b40aa6e582906258cc14a",
+        "android_client_info": {
+          "package_name": "com.mobdeve.malabagm_plazag.machineproject_hotnspicymemes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975531517567-n3lp40jao0mh6ljq35lokb1k1ma07q1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCry6zEYm6xNPzul5AwWnaJZj1noZIX-XE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975531517567-n3lp40jao0mh6ljq35lokb1k1ma07q1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

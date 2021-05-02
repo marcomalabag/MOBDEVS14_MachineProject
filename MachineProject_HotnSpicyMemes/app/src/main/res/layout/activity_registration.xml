@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrationActivity">
+
+    <TextView
+        android:id="@+id/activity_registration_tv_RegistrationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:text="Registration"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activity_registration_tv_Username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Username:"
+        app:layout_constraintEnd_toEndOf="@+id/activity_registration_tv_RegistrationTitle"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_registration_tv_RegistrationTitle" />
+
+
+    <TextView
+        android:id="@+id/activity_registration_tv_Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Password:"
+        app:layout_constraintEnd_toEndOf="@+id/activity_registration_tv_Username"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/activity_registration_tv_Username"
+        app:layout_constraintTop_toBottomOf="@+id/activity_registration_tv_Username" />
+
+    <TextView
+        android:id="@+id/activity_registration_tv_ConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Confirm Password:"
+        app:layout_constraintEnd_toEndOf="@+id/activity_registration_tv_Password"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/activity_registration_tv_Password"
+        app:layout_constraintTop_toBottomOf="@+id/activity_registration_tv_Password" />
+
+    <TextView
+        android:id="@+id/activity_registration_tv_Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Email:"
+        app:layout_constraintEnd_toEndOf="@+id/activity_registration_tv_Bios"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/activity_registration_tv_Bios"
+        app:layout_constraintTop_toBottomOf="@+id/activity_registration_tv_Bios" />
+
+    <TextView
+        android:id="@+id/activity_registration_tv_Bios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Bios:"
+        app:layout_constraintEnd_toEndOf="@+id/activity_registration_tv_ConfirmPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/activity_registration_tv_ConfirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/activity_registration_tv_ConfirmPassword" />
+
+    <EditText
+        android:id="@+id/activity_registration_et_Username"
+        android:layout_width="202dp"
+        android:layout_height="30dp"
+        android:background="@color/white"
+
+        android:hint="Username:"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/activity_registration_tv_Username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_registration_tv_Username"
+        app:layout_constraintTop_toTopOf="@+id/activity_registration_tv_Username" />
+
+    <EditText
+        android:id="@+id/activity_registration_et_Password"
+        android:layout_width="202dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        android:background="@color/white"
+
+        android:hint="Password:"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/activity_registration_tv_Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_registration_tv_Password"
+        app:layout_constraintTop_toTopOf="@+id/activity_registration_tv_Password" />
+
+    <EditText
+        android:id="@+id/activity_registration_et_ConfirmPassword"
+        android:layout_width="202dp"
+        android:layout_height="30dp"
+        android:background="@color/white"
+
+        android:hint="Confirm Password:"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/activity_registration_tv_ConfirmPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_registration_tv_ConfirmPassword"
+        app:layout_constraintTop_toTopOf="@+id/activity_registration_tv_ConfirmPassword" />
+
+    <EditText
+        android:id="@+id/activity_registration_et_Email"
+        android:layout_width="202dp"
+        android:layout_height="30dp"
+        android:background="@color/white"
+
+        android:hint="Email:"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/activity_registration_tv_Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_registration_tv_Email"
+        app:layout_constraintTop_toTopOf="@+id/activity_registration_tv_Email" />
+
+    <EditText
+        android:id="@+id/activity_registration_et_Bios"
+        android:layout_width="202dp"
+        android:layout_height="71dp"
+        android:background="@color/white"
+        android:hint="About yourself:"
+        android:inputType="textPersonName"
+        android:maxLines="5"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/activity_registration_tv_Bios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_registration_tv_Bios"
+        app:layout_constraintTop_toTopOf="@+id/activity_registration_tv_Bios" />
+
+    <Button
+        android:id="@+id/activity_registration_btn_registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/activity_registration_et_Bios"
+        app:layout_constraintStart_toStartOf="@+id/activity_registration_tv_Email"
+        app:layout_constraintTop_toBottomOf="@+id/activity_registration_et_Email" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
