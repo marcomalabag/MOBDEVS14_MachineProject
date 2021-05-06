@@ -8,10 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import Accounts.AccountFireBase;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText Username, Password;
     private Button Login, Register;
+    private AccountFireBase accountFireBase = new AccountFireBase();
 
 
     @Override
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Login.setOnClickListener(this);
         Register.setOnClickListener(this);
+        accountFireBase.getAccounts();
 
     }
 
