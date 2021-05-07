@@ -27,9 +27,9 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        this.username = findViewById(R.id.activity_registration_et_Username);
-        this.password = findViewById(R.id.activity_registration_et_Password);
-        this.ConfirmPassword = findViewById(R.id.activity_registration_et_ConfirmPassword);
+        this.username = findViewById(R.id.activity_registration_et_Username1);
+        this.password = findViewById(R.id.activity_registration_et_Password1);
+        this.ConfirmPassword = findViewById(R.id.activity_registration_et_ConfirmPassword1);
         this.bios = findViewById(R.id.activity_registration_et_Bios);
         this.email = findViewById(R.id.activity_registration_et_Email);
 

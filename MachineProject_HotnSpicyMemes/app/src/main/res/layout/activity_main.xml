@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E6C1C1"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/activity_main_tv_LoginLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hot n Spicy Memes"
-        android:textSize="30dp"
+        android:fontFamily="@font/fredoka_one"
+        android:text="Hot 'n Spicy Memes"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:text="Username:"
-        android:textSize="20dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.06"
@@ -37,28 +40,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password:"
-        android:textSize="20dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_tv_UserNameLabel"
-        app:layout_constraintVertical_bias="0.24" />
+        app:layout_constraintVertical_bias="0.241" />
 
     <EditText
         android:id="@+id/activity_main_et_UsernameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:hint="Enter Username:"
+        android:hint="Enter Username"
         android:inputType="textPersonName"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="@+id/activity_main_tv_UserNameLabel"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintHorizontal_bias="0.988"
         app:layout_constraintStart_toEndOf="@+id/activity_main_tv_UserNameLabel"
-        app:layout_constraintTop_toTopOf="@+id/activity_main_tv_UserNameLabel" />
+        tools:layout_editor_absoluteY="27dp" />
 
     <EditText
         android:id="@+id/activity_main_et_PasswordInput"
@@ -69,33 +72,67 @@
         android:inputType="textPassword"
         android:password="true"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="@+id/activity_main_tv_PasswordLabel"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toEndOf="@+id/activity_main_tv_PasswordLabel"
-        app:layout_constraintTop_toTopOf="@+id/activity_main_tv_PasswordLabel" />
+        tools:layout_editor_absoluteY="370dp" />
 
     <Button
         android:id="@+id/activity_main_btn_Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_width="131dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="44dp"
         android:text="Login"
+        android:textSize="18sp"
+        app:backgroundTint="#1AC3C3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_main_et_PasswordInput" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_et_PasswordInput1" />
 
     <Button
         android:id="@+id/activity_main_btn_Registration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registration"
+        android:layout_width="131dp"
+        android:layout_height="53dp"
+        android:text="Sign Up"
+        android:textSize="18sp"
+        app:backgroundTint="#1AC3C3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_btn_Login"
-        app:layout_constraintVertical_bias="0.291" />
+        app:layout_constraintVertical_bias="0.126" />
+
+    <EditText
+        android:id="@+id/activity_main_et_UsernameInput1"
+        android:layout_width="180dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="112dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:hint="Enter Username"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_tv_UserNameLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toEndOf="@+id/activity_main_tv_UserNameLabel"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_tv_UserNameLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/activity_main_et_PasswordInput1"
+        android:layout_width="180dp"
+        android:layout_height="39dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_tv_PasswordLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/activity_main_tv_PasswordLabel"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_tv_PasswordLabel"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
