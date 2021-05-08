@@ -108,9 +108,8 @@
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
         android:background="@color/white"
-
         android:hint="Password:"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:text=""
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/activity_registration_tv_Password"
@@ -123,43 +122,14 @@
         android:layout_width="202dp"
         android:layout_height="30dp"
         android:background="@color/white"
-
         android:hint="Confirm Password:"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:text=""
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/activity_registration_tv_ConfirmPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/activity_registration_tv_ConfirmPassword"
         app:layout_constraintTop_toTopOf="@+id/activity_registration_tv_ConfirmPassword" />
-
-    <EditText
-        android:id="@+id/activity_registration_et_Email"
-        android:layout_width="202dp"
-        android:layout_height="30dp"
-
-        android:background="@color/white"
-        android:hint="Email:"
-        android:inputType="textPersonName"
-        android:text=""
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
-        app:layout_constraintStart_toEndOf="@+id/activity_registration_tv_Email"
-        tools:layout_editor_absoluteY="350dp" />
-
-    <EditText
-        android:id="@+id/activity_registration_et_Bios"
-        android:layout_width="202dp"
-        android:layout_height="71dp"
-        android:background="@color/white"
-        android:hint="About yourself:"
-        android:inputType="textPersonName"
-        android:maxLines="5"
-        android:text=""
-        android:visibility="gone"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="440dp" />
 
     <Button
         android:id="@+id/activity_registration_btn_registration"
@@ -240,6 +210,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_registration_et_Password1" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
