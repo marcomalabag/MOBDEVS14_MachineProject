@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MachineProject_HotnSpicyMemes</string>
+
+    <string-array name="CategorySelection">
+        <item>Choose Category</item>
+        <item>Funny</item>
+        <item>Gaming</item>
+        <item>Random</item>
+    </string-array>
 </resources>

@@ -1,42 +1,102 @@
 package Accounts;
+import android.accounts.Account;
+import android.os.Parcel;
 import android.util.Log;
+
 
 import androidx.annotation.NonNull;
 
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
-public class AccountFireBase {
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class AccountFireBase implements ValueEventListener{
 
     private account NewAccount;
-    DatabaseReference ref;
+    private DatabaseReference firebaseDatabase;
+    private DatabaseReference ref;
+    private FirebaseAuth auth;
+    private List<account> accountList = new ArrayList<account>();
+
+    private String TestUsername;
+    private String TestPassword;
+    private int state = 9;
 
     public AccountFireBase(){
+        this.firebaseDatabase = FirebaseDatabase.getInstance().getReference();
+        this.ref = this.firebaseDatabase.child("Accounts");
 
-        this.ref = FirebaseDatabase.getInstance().getReference().child("Accounts");
     }
 
     public void addNewAccount(account Account){
         NewAccount = Account;
         this.ref.push().setValue(NewAccount);
-        this.ref.getKey();
+
     }
 
     public void getAccounts(){
-        this.ref.child("-MZzbzJHNgksC0_CFE8e").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        this.ref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                }
-                else {
-                    Log.d("firebase", String.valueOf(task.getResult().getValue()));
-                    
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                accountList.clear();
+                List<String> keys = new ArrayList<>();
+                for(DataSnapshot keynode : snapshot.getChildren()){
+                    keys.add(keynode.getKey());
+                    account Acc = keynode.getValue(account.class);
+                    Log.d("Accounts", Acc.getUsername());
+
                 }
             }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
         });
+        
+    }
+
+    public int checkAccount(String username, String Password){
+        this.TestUsername = username;
+        this.TestPassword = Password;
+        Query accountQ = this.ref.orderByChild("username").equalTo(this.TestUsername);
+        accountQ.addListenerForSingleValueEvent(this);
+        Log.d("TAG", this.TestUsername);
+        Log.d("TAG", this.TestPassword);
+        return this.state;
+    }
+
+    @Override
+    public void onDataChange(@NonNull DataSnapshot snapshot) {
+        if(!snapshot.exists()){
+            this.state = 0;
+        }
+        else{
+            for(DataSnapshot getPassword: snapshot.getChildren()){
+                if(!getPassword.getValue(account.class).getPassword().equals(this.TestPassword)){
+                    this.state = 1;
+                }
+                else {
+                    this.state = 2;
+                }
+            }
+
+        }
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError error) {
+
     }
 }

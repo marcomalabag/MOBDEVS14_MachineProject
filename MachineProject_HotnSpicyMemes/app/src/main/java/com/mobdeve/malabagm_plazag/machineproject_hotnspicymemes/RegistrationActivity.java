@@ -1,5 +1,6 @@
 package com.mobdeve.malabagm_plazag.machineproject_hotnspicymemes;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,6 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.accounts.Account;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import Accounts.AccountFireBase;
 import Accounts.account;
@@ -19,6 +25,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     private AccountFireBase accountFireBase = new AccountFireBase();
 
     private Button Registration;
+    private FirebaseAuth auth;
 
     public void RegisterAccount(){
         Toast toast;
@@ -26,14 +33,12 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             this.NewAccount = new account(this.username.getText().toString(), this.password.getText().toString(),
                     this.email.getText().toString(), this.bios.getText().toString());
             this.accountFireBase.addNewAccount(this.NewAccount);
-            toast = Toast.makeText(getApplicationContext(), "Account Successfully created", Toast.LENGTH_SHORT);
-            finish();
         }
         else{
             toast = Toast.makeText(getApplicationContext(), "Confirm password and password do not match, please try again.", Toast.LENGTH_SHORT);
         }
 
-        toast.show();
+
     }
 
 
@@ -49,6 +54,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
         this.Registration = findViewById(R.id.activity_registration_btn_registration);
 
         this.Registration.setOnClickListener(this);
+        this.auth = FirebaseAuth.getInstance();
     }
 
     @Override

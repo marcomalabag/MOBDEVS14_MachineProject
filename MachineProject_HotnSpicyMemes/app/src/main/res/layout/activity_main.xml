@@ -7,6 +7,15 @@
     android:background="#E6C1C1"
     tools:context=".MainActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activity_main_rv_accounts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/activity_main_tv_LoginLabel"
         android:layout_width="wrap_content"
@@ -48,35 +57,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_tv_UserNameLabel"
         app:layout_constraintVertical_bias="0.241" />
-
-    <EditText
-        android:id="@+id/activity_main_et_UsernameInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:hint="Enter Username"
-        android:inputType="textPersonName"
-        android:text=""
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
-        app:layout_constraintStart_toEndOf="@+id/activity_main_tv_UserNameLabel"
-        tools:layout_editor_absoluteY="27dp" />
-
-    <EditText
-        android:id="@+id/activity_main_et_PasswordInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:hint="Enter Password:"
-        android:inputType="textPassword"
-        android:password="true"
-        android:text=""
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
-        app:layout_constraintStart_toEndOf="@+id/activity_main_tv_PasswordLabel"
-        tools:layout_editor_absoluteY="370dp" />
 
     <Button
         android:id="@+id/activity_main_btn_Login"
