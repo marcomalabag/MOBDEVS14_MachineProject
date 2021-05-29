@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MachineProject_HotnSpicyMemes">
-        <activity android:name=".UploadMeme"></activity>
+        <activity android:name=".EditActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".UploadMeme" />
         <activity android:name=".MemeActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".MainActivity">

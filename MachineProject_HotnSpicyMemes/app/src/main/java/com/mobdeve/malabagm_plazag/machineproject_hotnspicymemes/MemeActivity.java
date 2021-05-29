@@ -13,6 +13,7 @@ public class MemeActivity extends AppCompatActivity implements View.OnClickListe
     private TextView Username;
     private Button Upload;
     public static String USERNAME_TAG = "USERNAME_TAG";
+    public static String BIO_TAG = "BIO_TAG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public class MemeActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         this.Upload.setOnClickListener(this);
+
+        this.Username.setOnClickListener(this);
     }
 
     public void Upload(){
@@ -37,11 +40,21 @@ public class MemeActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
+    public void Profile() {
+        Intent intent = new Intent(MemeActivity.this, ProfileActivity.class);
+        intent.putExtra(USERNAME_TAG, this.Username.getText().toString());
+        //intent.putExtra(BIO_TAG, this.)
+        startActivity(intent);
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.activity_meme_btn_upload:
                 Upload();
+                break;
+            case R.id.activity_meme_tv_Username:
+                Profile();
                 break;
             default:
                 break;
