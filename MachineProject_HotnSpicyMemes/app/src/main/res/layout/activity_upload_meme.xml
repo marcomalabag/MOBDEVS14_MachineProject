@@ -13,30 +13,20 @@
         android:id="@+id/spinner_catergory"
         android:layout_width="131dp"
         android:layout_height="24dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="@+id/btn_chooseFile"
-        app:layout_constraintTop_toBottomOf="@+id/btn_chooseFile" />
-
-    <Button
-        android:id="@+id/btn_chooseFile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Choose File"
-        app:backgroundTint="#1AC3C3"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="260dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/et_Caption"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_filename"
+        android:id="@+id/et_Caption"
         android:layout_width="231dp"
         android:layout_height="33dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="12dp"
         android:background="@android:drawable/editbox_background"
-        android:hint="Enter file name"
+        android:hint="Enter Caption"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,36 +48,11 @@
         android:layout_height="517dp"
         android:layout_marginTop="44dp"
         android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@id/pd_loading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_filename"
+        app:layout_constraintTop_toBottomOf="@id/et_Caption"
         app:layout_constraintVertical_bias="0.705" />
 
-    <androidx.core.widget.ContentLoadingProgressBar
-        android:id="@+id/pd_loading"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@id/btn_Upload"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_showUploads"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="-6dp"
-        android:gravity="center"
-        android:text="Show Uploads"
-        android:textSize="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/btn_Upload"
-        app:layout_constraintBottom_toBottomOf="@id/btn_Upload"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/btn_Upload"
-        app:layout_constraintTop_toTopOf="@id/btn_Upload"
-        app:layout_constraintVertical_bias="0.636" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

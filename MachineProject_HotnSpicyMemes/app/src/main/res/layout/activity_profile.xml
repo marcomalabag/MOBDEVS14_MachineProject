@@ -20,8 +20,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/activity_profile_tv_Bio"
+    <EditText
+        android:id="@+id/activity_profile_et_Bio"
         android:layout_width="373dp"
         android:layout_height="128dp"
         android:layout_marginTop="60dp"

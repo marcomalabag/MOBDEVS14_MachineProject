@@ -3,6 +3,7 @@ package com.mobdeve.malabagm_plazag.machineproject_hotnspicymemes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,14 +12,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import Accounts.AccountFireBase;
+import Accounts.account;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText Username, Password;
     private Button Login, Register;
-    private AccountFireBase accountFireBase = new AccountFireBase();
+    private AccountFireBase accountFireBase;
     private RecyclerView myRecyclerView;
-    public static String NAME_TAG = "NAME_TAG";
+    public static String ACCOUNT_TAG = "ACCOUNT_TAG";
 
 
     @Override
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Login.setOnClickListener(this);
         Register.setOnClickListener(this);
-        accountFireBase.getAccounts();
+        this.accountFireBase = new AccountFireBase();
 
     }
 
@@ -46,10 +48,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "Password is incorrect", Toast.LENGTH_SHORT).show();
             }
             else if(accountFireBase.checkAccount(Username.getText().toString(), Password.getText().toString()) == 2){
-                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, MemeActivity.class);
-                intent.putExtra(NAME_TAG, Username.getText().toString());
-                startActivity(intent);
+                if(accountFireBase.getCurrentAccount() != null){
+                    Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, MemeActivity.class);
+                    account currentAccount = accountFireBase.getCurrentAccount();
+                    intent.putExtra(ACCOUNT_TAG, currentAccount);
+                    startActivity(intent);
+                }
             }
         }
 

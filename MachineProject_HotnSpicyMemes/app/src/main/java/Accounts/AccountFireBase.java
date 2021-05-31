@@ -18,6 +18,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -31,6 +32,7 @@ public class AccountFireBase implements ValueEventListener{
 
     private String TestUsername;
     private String TestPassword;
+    private account currentAccount = null;
     private int state = 9;
 
     public AccountFireBase(){
@@ -45,6 +47,11 @@ public class AccountFireBase implements ValueEventListener{
 
     }
 
+    public void UpdateBios(String Account, String Bios){
+        Query accountQ  = this.ref.orderByChild("username").equalTo(Account);
+
+    }
+
     public void getAccounts(){
         this.ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -54,8 +61,6 @@ public class AccountFireBase implements ValueEventListener{
                 for(DataSnapshot keynode : snapshot.getChildren()){
                     keys.add(keynode.getKey());
                     account Acc = keynode.getValue(account.class);
-                    Log.d("Accounts", Acc.getUsername());
-
                 }
             }
 
@@ -67,13 +72,16 @@ public class AccountFireBase implements ValueEventListener{
         
     }
 
+    public account getCurrentAccount(){
+        return this.currentAccount;
+    }
+
     public int checkAccount(String username, String Password){
         this.TestUsername = username;
         this.TestPassword = Password;
         Query accountQ = this.ref.orderByChild("username").equalTo(this.TestUsername);
         accountQ.addListenerForSingleValueEvent(this);
-        Log.d("TAG", this.TestUsername);
-        Log.d("TAG", this.TestPassword);
+
         return this.state;
     }
 
@@ -88,6 +96,7 @@ public class AccountFireBase implements ValueEventListener{
                     this.state = 1;
                 }
                 else {
+                    this.currentAccount = getPassword.getValue(account.class);
                     this.state = 2;
                 }
             }
